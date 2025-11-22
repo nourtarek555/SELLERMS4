@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8F0"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Order ID -->
+        <TextView
+            android:id="@+id/orderIdText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order #12345678"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#E65100"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Buyer Info Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buyer Information"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#6D4C41"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/buyerNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name: John Doe"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/buyerEmailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email: john@example.com"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/buyerPhoneText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone: +1234567890"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone" />
+
+        <!-- Delivery Information Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delivery Information"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#6D4C41"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/deliveryTypeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delivery Type: PICKUP"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/deliveryAddressText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delivery Address: N/A"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/deliveryPriceText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delivery Fee: $0.00"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone" />
+
+        <!-- Status and Total -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Status: PENDING"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#FB8C00" />
+
+            <TextView
+                android:id="@+id/totalAmountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total: $0.00"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Items Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order Items"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#6D4C41"
+            android:layout_marginBottom="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itemsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Row 1: Accept/Reject (for pending orders) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/acceptBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Accept Order"
+                    android:backgroundTint="#4CAF50"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginEnd="4dp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/rejectBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Decline Order"
+                    android:backgroundTint="#F44336"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginStart="4dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Row 2: Start Preparing (for accepted orders) -->
+            <Button
+                android:id="@+id/preparingBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Preparing"
+                android:backgroundTint="#FF9800"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+            <!-- Row 3: Mark Ready (for preparing orders) -->
+            <Button
+                android:id="@+id/readyBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mark Ready"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+            <!-- Row 4: Mark Delivered (for ready delivery orders) -->
+            <Button
+                android:id="@+id/deliveredBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mark as Delivered"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:backgroundTint="#6D4C41"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp" />
+
+        <ProgressBar
+            android:id="@+id/detailsProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</ScrollView>
+

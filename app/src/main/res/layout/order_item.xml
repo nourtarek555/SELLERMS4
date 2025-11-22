@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/item_background"
+    android:layout_marginBottom="12dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:elevation="2dp">
+
+    <!-- Header Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/orderIdText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Order #12345678"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#E65100" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PENDING"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- Buyer Info -->
+    <TextView
+        android:id="@+id/buyerNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buyer: John Doe"
+        android:textSize="14sp"
+        android:textColor="#6D4C41"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Order Summary -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/itemCountText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0 item(s)"
+            android:textSize="14sp"
+            android:textColor="#6D4C41" />
+
+        <TextView
+            android:id="@+id/totalAmountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: $0.00"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#E65100" />
+    </LinearLayout>
+
+    <!-- Tap hint -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap to view details →"
+        android:textSize="12sp"
+        android:textColor="#9E9E9E"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="end" />
+
+</LinearLayout>
+

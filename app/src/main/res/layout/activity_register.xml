@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#FFF8F0"> <!-- soft warm cream background -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tvRegisterTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTER ACCOUNT"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#FF9800"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="sans-serif-medium" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:hint="FULL NAME"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FF9800"
+            android:textColorHint="#FFCC80"
+            android:inputType="textCapCharacters"
+            android:fontFamily="sans-serif-medium"/>
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:hint="PHONE NUMBER"
+            android:inputType="phone|textCapCharacters"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FF9800"
+            android:textColorHint="#FFCC80"
+            android:fontFamily="sans-serif-medium"/>
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:hint="EMAIL"
+            android:inputType="textEmailAddress|textCapCharacters"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FF9800"
+            android:textColorHint="#FFCC80"
+            android:fontFamily="sans-serif-medium"/>
+
+        <EditText
+            android:id="@+id/etAddress"
+            android:hint="ADDRESS"
+            android:inputType="textPostalAddress|textCapCharacters"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FF9800"
+            android:textColorHint="#FFCC80"
+            android:fontFamily="sans-serif-medium"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:hint="PASSWORD"
+            android:inputType="textPassword|textCapCharacters"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FF9800"
+            android:textColorHint="#FFCC80"
+            android:fontFamily="sans-serif-medium"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="REGISTER"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#FF9800"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-medium"/>
+
+        <ProgressBar
+            android:id="@+id/registerProgress"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

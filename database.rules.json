@@ -1,0 +1,47 @@
+{
+  "rules": {
+    "Seller": {
+      "$sellerId": {
+        "Products": {
+          "$productId": {
+            "stock": {
+              // Validate that stock is a non-negative integer
+              ".validate": "newData.isNumber() && newData.val() >= 0",
+              // Allow read for authenticated users
+              ".read": "auth != null",
+              // Allow write only for the seller who owns the product
+              ".write": "auth != null && auth.uid === $sellerId"
+            },
+            // Allow read/write of other product fields for the seller
+            ".read": "auth != null",
+            ".write": "auth != null && auth.uid === $sellerId"
+          }
+        },
+        // Allow sellers to read their own data
+        ".read": "auth != null && auth.uid === $sellerId",
+        ".write": "auth != null && auth.uid === $sellerId"
+      }
+    },
+    "Orders": {
+      "$orderId": {
+        // Allow authenticated users to read orders
+        ".read": "auth != null",
+        // Allow authenticated users to create orders
+        ".write": "auth != null",
+        "items": {
+          "$itemId": {
+            "quantity": {
+              // Validate quantity is positive
+              ".validate": "newData.isNumber() && newData.val() > 0"
+            }
+          }
+        },
+        "status": {
+          // Validate status is one of the allowed values
+          ".validate": "newData.isString() && (newData.val() === 'pending' || newData.val() === 'accepted' || newData.val() === 'preparing' || newData.val() === 'ready' || newData.val() === 'delivered' || newData.val() === 'rejected')"
+        }
+      }
+    }
+  }
+}
+
