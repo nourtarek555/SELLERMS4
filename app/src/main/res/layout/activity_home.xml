@@ -1,32 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- This is the root layout for the home screen of the seller application. -->
+<!-- It uses a LinearLayout with a vertical orientation to stack the app bar, ViewPager, and TabLayout. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFF8F0">
+    android:background="#FFF8F0"> <!-- A light background color for the activity. -->
 
-    <!-- App Bar -->
+    <!-- This is the app bar at the top of the screen. -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:elevation="4dp"
-        app:elevation="4dp">
+        android:elevation="4dp"> <!-- Adds a shadow to the app bar. -->
 
+        <!-- The Toolbar within the app bar. -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#E65100"
+            android:layout_height="?attr/actionBarSize" <!-- Standard height for the action bar. -->
+            android:background="#E65100" <!-- A custom orange color for the toolbar background. -->
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+            <!-- A TextView to display the title of the screen. -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Seller Dashboard"
-                android:textColor="#FFFFFF"
+                android:textColor="#FFFFFF" <!-- White text color. -->
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif-medium" />
@@ -35,27 +37,27 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- ViewPager2 for swiping between fragments -->
+    <!-- ViewPager2 allows the user to swipe left and right to switch between fragments. -->
+    <!-- The layout_weight="1" makes the ViewPager take up all the available space between the app bar and the tab layout. -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <!-- TabLayout for navigation -->
+    <!-- TabLayout provides the tabs for navigating between the fragments in the ViewPager. -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:elevation="8dp"
-        app:elevation="8dp"
-        app:tabMode="fixed"
-        app:tabGravity="fill"
-        app:tabIndicatorColor="#E65100"
-        app:tabSelectedTextColor="#E65100"
-        app:tabTextColor="#9E9E9E"
-        app:tabRippleColor="@android:color/transparent"
-        app:tabIndicatorHeight="3dp" />
+        android:background="#FFFFFF" <!-- White background for the tab layout. -->
+        android:elevation="8dp" <!-- Adds a shadow to the tab layout. -->
+        app:tabMode="fixed" <!-- All tabs are shown at once. -->
+        app:tabGravity="fill" <!-- Tabs are distributed evenly to fill the width of the layout. -->
+        app:tabIndicatorColor="#E65100" <!-- The color of the indicator that shows the selected tab. -->
+        app:tabSelectedTextColor="#E65100" <!-- The color of the text for the selected tab. -->
+        app:tabTextColor="#9E9E9E" <!-- The color of the text for unselected tabs. -->
+        app:tabRippleColor="@android:color/transparent" <!-- Disables the ripple effect when a tab is touched. -->
+        app:tabIndicatorHeight="3dp" /> <!-- The height of the tab indicator. -->
 
 </LinearLayout>
